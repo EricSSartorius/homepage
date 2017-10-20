@@ -11,6 +11,7 @@
     "gatsby-plugin-sass": "^1.0.12",
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-source-filesystem": "^1.5.1",
+    "gatsby-source-wordpress": "^2.0.20",
     "gatsby-transformer-remark": "^1.7.15"
   },
   "keywords": [
