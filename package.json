@@ -5,14 +5,17 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.45",
+    "gatsby-image": "^1.0.14",
     "gatsby-link": "^1.6.17",
+    "gatsby-plugin-google-analytics": "^1.0.10",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-react-next": "^1.0.4",
     "gatsby-plugin-sass": "^1.0.12",
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-source-filesystem": "^1.5.1",
     "gatsby-source-wordpress": "^2.0.20",
-    "gatsby-transformer-remark": "^1.7.15"
+    "gatsby-transformer-remark": "^1.7.15",
+    "typography": "^0.16.6"
   },
   "keywords": [
     "gatsby"

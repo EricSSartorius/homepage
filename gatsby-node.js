@@ -1,32 +1,68 @@
-const path = require('path')
+const _ = require(`lodash`)
+const Promise = require(`bluebird`)
+const path = require(`path`)
+const slash = require(`slash`)
 
-exports.createPages = ({boundActionCreators, graphql}) => {
-  const {createPage} = boundActionCreators
-  const postTemplate = path.resolve('src/templates/post.js')
-  return graphql(`{
-    allMarkdownRemark {
-      edges {
-        node {
-          html
-          id
-          frontmatter {
-            path
-            title
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+  return new Promise((resolve, reject) => {
+    graphql(
+      `
+      {
+        allWordpressPage {
+          edges {
+            node {
+              id
+              slug
+              status
+              template
+            }
           }
         }
       }
-    }
-  }`)
-  .then(res => {
-    if(res.errors) {
-      return Promise.reject(res.errors)
-    }
+    `
+    )
+      .then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
 
-    res.data.allMarkdownRemark.edges.forEach(({node}) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate
       })
-    })
+      .then(() => {
+        graphql(
+          `{
+                  allWordpressPost {
+                    edges {
+                      node {
+                        id
+                        slug
+                        status
+                        template
+                        format
+                      }
+                    }
+                  }
+
+                }
+              `
+        ).then(result => {
+          if (result.errors) {
+            console.log(result.errors)
+            reject(result.errors)
+          }
+          const postTemplate = path.resolve('./src/templates/post.js')
+          _.each(result.data.allWordpressPost.edges, edge => {
+            createPage({
+              path: `/${edge.node.slug}/`,
+              component: slash(postTemplate),
+              context: {
+                id: edge.node.id,
+              },
+            })
+          })
+          resolve()
+        })
+      })
   })
 }

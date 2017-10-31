@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-
+import favicon from '../../favicon.ico'
 import './index.scss'
 
 const Header = () => (
@@ -10,24 +10,32 @@ const Header = () => (
     <div className="branding">
       <h1>
         <Link to="/">
-          Eric's Homepage
+          Eric Sartorius
         </Link>
       </h1>
     </div>
   </div>
 )
 
+const Subheader = () => (
+  <div className="subheader">
+    <ul>
+      <li><Link to="/about/">About</Link></li>
+      <li><Link to="/work">Work</Link></li>
+      <li><Link to="/contact/">Contact</Link></li>
+    </ul>
+    <hr className="underline" />
+  </div>
+)
+
 const Footer = () => (
   <div className="footer">
-    <div className="branding">
-      <Link to="/">
-        Eric's Homepage
-      </Link>
-    </div>
-    <Link to="/about/">About</Link>
-    <Link to="/projects">Projects</Link>
-    <Link to="/blog/">Blog</Link>
-    <Link to="/contact/">Contact</Link>
+    <ul>
+      <li><a href="https://github.com/ericssartorius">Github</a></li>
+      <li><a href="http://www.linkedin.com/in/ericsartorius/">Linkedin</a></li>
+      <li><a href="http://twitter.com/the_epic_life">Twitter</a></li>
+      <li><a href="https://dribbble.com/ericssartorius">Dribble</a></li>
+    </ul>
   </div>
 )
 
@@ -39,16 +47,14 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-    />
+
+    >  
+      <link rel="shortcut icon" type="image/png" href={favicon} />
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    </Helmet>
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <Subheader />
+    <div className="index">
       {children()}
     </div>
     <Footer />
