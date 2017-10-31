@@ -6,37 +6,48 @@ import favicon from '../../favicon.ico'
 import './index.scss'
 
 const Header = () => (
-  <div className="header">
-    <div className="branding">
-      <h1>
-        <Link to="/">
-          Eric Sartorius
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <header>
+    <h1>
+      <Link to="/">
+        Eric Sartorius
+      </Link>
+    </h1>
+  </header>
 )
 
-const Subheader = () => (
-  <div className="subheader">
-    <ul>
-      <li><Link to="/about/">About</Link></li>
-      <li><Link to="/work">Work</Link></li>
-      <li><Link to="/contact/">Contact</Link></li>
-    </ul>
-    <hr className="underline" />
-  </div>
+const Nav = () => (
+  <aside>
+    <nav>
+      <ul>
+        <li className="nav"><Link to="/about/">About</Link></li>
+        <li className="nav"><Link to="/contact/">Contact</Link></li>
+        <li className="nav nav-work"><Link to="/work">Work</Link></li>
+        <li className="sub-nav"><Link to="/work">
+          Web Dev/Design</Link>
+        </li>
+        <li className="sub-nav"><Link to="/work">
+          Translation/Subtitling</Link>
+        </li>
+        <li className="sub-nav"><Link to="/work">
+          Modeling</Link>
+        </li>
+        <li className="sub-nav sub-nav-movement"><Link to="/work">
+          Movement Coaching</Link>
+        </li>
+      </ul>
+    </nav>
+  </aside>
 )
 
 const Footer = () => (
-  <div className="footer">
+  <footer className="footer">
     <ul>
       <li><a href="https://github.com/ericssartorius">Github</a></li>
       <li><a href="http://www.linkedin.com/in/ericsartorius/">Linkedin</a></li>
       <li><a href="http://twitter.com/the_epic_life">Twitter</a></li>
       <li><a href="https://dribbble.com/ericssartorius">Dribble</a></li>
     </ul>
-  </div>
+  </footer>
 )
 
 const TemplateWrapper = ({ children }) => (
@@ -53,9 +64,11 @@ const TemplateWrapper = ({ children }) => (
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     </Helmet>
     <Header />
-    <Subheader />
-    <div className="index">
-      {children()}
+    <div className="container">
+      <Nav />
+      <main>
+        {children()}
+      </main>
     </div>
     <Footer />
   </div>

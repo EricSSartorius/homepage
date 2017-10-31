@@ -16,19 +16,19 @@ $black: #000;
 
 body {
  background-color: $light-grey;
-  // background: url(../images/hex-petals.svg) no-repeat right bottom fixed; 
+  // background: url(../images/hex-petals.svg) no-repeat right bottom fixed;
+  height: 100vh; 
  h1 {
     font-size: 72px;
     text-transform: uppercase;
   } 
   h1, h2 {
-    color: $orange;
+    color: $dark-grey;
   }
   p, h3 {
-    color: $purple;
+    color: $dark-grey;
   }
   a {
-    color: $orange;
     text-decoration: none;
   }
   ul {
@@ -37,50 +37,72 @@ body {
   }
 }
 
-.header {
-  background: $purple;
-  .branding {
-    margin: 0 auto;
-    padding: 1rem;
-    h1 {
-      margin: 0;
-      font-size: 36px;
-      a {
-        color: $white;
-      }
+header {
+  z-index: 99;
+  position: fixed;
+  background: $light-grey;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  h1 {
+    margin: 0;
+    font-size: 36px;
+    a {
+      color: $black;
     }
   }
 }
 
-.subheader {
-  background: $grey;
-  margin-bottom: 1.45rem;
+.container {
+  display: flex;
+}
+
+aside {
+  width: 300px;
   ul {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 1rem;
-    font-family: 'BigNoodleTitling Oblique';
-    font-size: 36px;
+    position: fixed;
+    padding: 5rem 1rem;
     li {
       padding: 10px;
       margin: 0;
-      background: $grey;
       a {
-        color: $white;
+        color: $grey;
+        &:hover {
+          color: $black;
+        }
+      }
+      &.sub-nav {
+        padding: 0;
+        a {
+          text-transform: uppercase;
+          font-size: 12px;
+          margin-left: 20px;
+        }
+        &-movement {
+          padding-bottom: 10px;
+        }
+      }
+      &.nav {
+        &-work {
+          padding-bottom: 0;
+        }
+        a {
+          font-family: 'BigNoodleTitling Oblique';
+          font-size: 48px;
+          &:hover {
+            font-size: 72px;
+          }
+        }
       }
     }
   }
-  .underline {
-    background-color: $orange;
-    height: 5px;
-    margin-bottom: 0;
-  }
 }
 
-.index {
-  margin: 0 auto;
-  padding: 0 1rem 1rem;
-  padding-top: 0;
+main {
+  width: 80%;
+  padding: 5rem; 
 }
 
 .about {
@@ -88,14 +110,23 @@ body {
 }
 
 .work {
-
+  .work-item {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+  }
 }
 
 .contact {
 
 }
 
-.footer {
+footer {
+  position: fixed;
+  height: 40px;
+  right: 0;
+  left: 0;
+  bottom: 0;
   background: $black;
   ul {
     font-family: 'BigNoodleTitling Oblique';
@@ -105,6 +136,9 @@ body {
       margin: 10px;
       a {
         color: $white;
+        &:hover {
+          font-size: 24px;
+        }
       }
     }
   }

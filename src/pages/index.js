@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 
 const IndexPage = ({data}) => (
   <div className="home">
-    <h1>Epic Site</h1>
   </div>
 )
 
