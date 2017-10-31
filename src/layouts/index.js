@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import favicon from '../../favicon.ico'
 import './index.scss'
 
+
+
 const Header = () => (
   <header>
     <h1>
@@ -19,19 +21,19 @@ const Nav = () => (
   <aside>
     <nav>
       <ul>
-        <li className="nav"><Link to="/about/">About</Link></li>
-        <li className="nav"><Link to="/contact/">Contact</Link></li>
-        <li className="nav nav-work"><Link to="/work">Work</Link></li>
-        <li className="sub-nav"><Link to="/work">
+        <li className="nav"><Link to="/about/" activeClassName="active" >About</Link></li>
+        <li className="nav"><Link to="/contact/" activeClassName="active" >Contact</Link></li>
+        <li className="nav nav-work"><Link to="/work" activeClassName="active" >Work</Link></li>
+        <li className="sub-nav"><Link to="/work-dev" activeClassName="active" >
           Web Dev/Design</Link>
         </li>
-        <li className="sub-nav"><Link to="/work">
+        <li className="sub-nav"><Link to="/work-trans" activeClassName="active" >
           Translation/Subtitling</Link>
         </li>
-        <li className="sub-nav"><Link to="/work">
+        <li className="sub-nav"><Link to="/work-model" activeClassName="active" >
           Modeling</Link>
         </li>
-        <li className="sub-nav sub-nav-movement"><Link to="/work">
+        <li className="sub-nav sub-nav-movement"><Link to="/work-movement" activeClassName="active" >
           Movement Coaching</Link>
         </li>
       </ul>
@@ -63,8 +65,8 @@ const TemplateWrapper = ({ children }) => (
       <link rel="shortcut icon" type="image/png" href={favicon} />
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     </Helmet>
-    <Header />
-    <div className="container">
+    <div >
+      <Header />
       <Nav />
       <main>
         {children()}

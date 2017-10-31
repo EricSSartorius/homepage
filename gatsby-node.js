@@ -1,68 +1,32 @@
-const _ = require(`lodash`)
-const Promise = require(`bluebird`)
-const path = require(`path`)
-const slash = require(`slash`)
+const path = require('path')
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
+exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
-    graphql(
-      `
-      {
-        allWordpressPage {
-          edges {
-            node {
-              id
-              slug
-              status
-              template
-            }
+  const postTemplate = path.resolve('src/templates/post.js')
+  return graphql(`{
+    allMarkdownRemark {
+      edges {
+        node {
+          html
+          id
+          frontmatter {
+            path
+            title
           }
         }
       }
-    `
-    )
-      .then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
-        }
+    }
+  }`)
+    .then(res => {
+      if (res.errors) {
+        return Promise.reject(res.errors)
+      }
 
-      })
-      .then(() => {
-        graphql(
-          `{
-                  allWordpressPost {
-                    edges {
-                      node {
-                        id
-                        slug
-                        status
-                        template
-                        format
-                      }
-                    }
-                  }
-
-                }
-              `
-        ).then(result => {
-          if (result.errors) {
-            console.log(result.errors)
-            reject(result.errors)
-          }
-          const postTemplate = path.resolve('./src/templates/post.js')
-          _.each(result.data.allWordpressPost.edges, edge => {
-            createPage({
-              path: `/${edge.node.slug}/`,
-              component: slash(postTemplate),
-              context: {
-                id: edge.node.id,
-              },
-            })
-          })
-          resolve()
+      res.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: node.frontmatter.path,
+          component: postTemplate
         })
       })
-  })
+    })
 }

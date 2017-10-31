@@ -1,5 +1,5 @@
 ---
-path: '/ujudge'
+path: '/work/ujudge'
 title: 'U.Judge'
 ---
 

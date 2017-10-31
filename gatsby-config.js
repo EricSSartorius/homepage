@@ -21,21 +21,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-wordpress',
-      options: {
-        baseUrl: 'www.iamtheepic.com',
-        protocol: 'http',
-        hostingWPCOM: false,
-        useACF: true,
-        auth: {
-          htaccess_user: 'eric@2sbros.com',
-          htaccess_pass: 'Kimchiplease!1',
-          htaccess_sendImmediately: false,
-        },
-        verboseOutput: true,
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-71581610-1',

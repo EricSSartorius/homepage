@@ -1,5 +1,5 @@
 ---
-path: '/blocjams'
+path: '/work/blocjams'
 title: 'Bloc Jams'
 ---
 

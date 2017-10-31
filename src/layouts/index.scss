@@ -7,6 +7,9 @@ $orange: #FF9D00;
 $white: #fff;
 $black: #000;
 
+$sidebar-width: 300px;
+$fadeText-distance: 0.2;
+
 @font-face {
   font-family: 'BigNoodleTitling Oblique';
   font-style: normal;
@@ -15,9 +18,9 @@ $black: #000;
 }
 
 body {
- background-color: $light-grey;
-  // background: url(../images/hex-petals.svg) no-repeat right bottom fixed;
-  height: 100vh; 
+  background-color: $light-grey;
+  // background: url(../images/digitalnomad.jpg) no-repeat center center fixed;
+  // background-size: cover;
  h1 {
     font-size: 72px;
     text-transform: uppercase;
@@ -29,21 +32,25 @@ body {
     color: $dark-grey;
   }
   a {
+    color: $black;
     text-decoration: none;
   }
   ul {
     list-style: none;
     margin: 0;
+    li a {
+      -webkit-transition: color 0.5s, font-size 0.5s;
+      -moz-transition: color 0.5s, font-size 0.5s;
+      -o-transition: color 0.5s, font-size 0.5s;
+      transition: color 0.5s, font-size 0.5s;
+    }
   }
 }
 
 header {
   z-index: 99;
   position: fixed;
-  background: $light-grey;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   margin: 0 auto;
   padding: 1rem 1.5rem;
   h1 {
@@ -55,16 +62,14 @@ header {
   }
 }
 
-.container {
-  display: flex;
-}
-
 aside {
-  width: 300px;
+  width: $sidebar-width;
+  position: fixed;
+  height: 100%;
   ul {
-    position: fixed;
     padding: 5rem 1rem;
     li {
+      // text-shadow: 2px 2px $dark-grey;
       padding: 10px;
       margin: 0;
       a {
@@ -72,6 +77,9 @@ aside {
         &:hover {
           color: $black;
         }
+      }
+      .active {
+        color: $black;
       }
       &.sub-nav {
         padding: 0;
@@ -95,14 +103,40 @@ aside {
             font-size: 72px;
           }
         }
+        .active {
+          font-size: 72px;
+        }
       }
     }
   }
 }
 
 main {
-  width: 80%;
-  padding: 5rem; 
+  margin: auto;
+  margin-left: $sidebar-width;
+  padding: 5rem 1rem;
+  width: auto;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(transparent, $dark-grey percentage($fadeText-distance), $dark-grey percentage(1 - $fadeText-distance), transparent);
+  color: $dark-grey;
+  -webkit-text-fill-color: transparent;
+}
+
+.home {
+  background: url(../images/digitalnomad.jpg) no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: -1;
+}
+
+.home {
+  
 }
 
 .about {
@@ -110,11 +144,7 @@ main {
 }
 
 .work {
-  .work-item {
-    display: inline-block;
-    width: 50%;
-    padding: 10px;
-  }
+
 }
 
 .contact {
@@ -123,7 +153,7 @@ main {
 
 footer {
   position: fixed;
-  height: 40px;
+  height: 50px;
   right: 0;
   left: 0;
   bottom: 0;
