@@ -5,10 +5,8 @@ import Helmet from 'react-helmet'
 import favicon from '../../favicon.ico'
 import './index.scss'
 
-
-
 const Header = () => (
-  <header>
+  <header className={window.location.pathname === "/" ? "light-logo" : ""}>
     <h1>
       <Link to="/">
         Eric Sartorius
@@ -19,7 +17,7 @@ const Header = () => (
 
 const Nav = () => (
   <aside>
-    <nav>
+    <nav className={window.location.pathname === "/" ? "light-nav" : ""}>
       <ul>
         <li className="nav"><Link to="/about/" activeClassName="active" >About</Link></li>
         <li className="nav"><Link to="/contact/" activeClassName="active" >Contact</Link></li>
@@ -60,7 +58,6 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-
     >  
       <link rel="shortcut icon" type="image/png" href={favicon} />
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />

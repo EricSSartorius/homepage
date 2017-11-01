@@ -3,6 +3,7 @@ $light-blue: #ADC4D7;
 $light-grey: #F2F0F4;
 $dark-grey: #2f3543;
 $grey: #D8D8D8;
+$medium-grey: #82858E;
 $orange: #FF9D00;
 $white: #fff;
 $black: #000;
@@ -19,8 +20,6 @@ $fadeText-distance: 0.2;
 
 body {
   background-color: $light-grey;
-  // background: url(../images/digitalnomad.jpg) no-repeat center center fixed;
-  // background-size: cover;
  h1 {
     font-size: 72px;
     text-transform: uppercase;
@@ -53,6 +52,10 @@ header {
   width: 100%;
   margin: 0 auto;
   padding: 1rem 1.5rem;
+  &.light-logo h1 a {
+    color: $white;
+    text-shadow: 2px 2px $dark-grey;
+  }
   h1 {
     margin: 0;
     font-size: 36px;
@@ -66,14 +69,20 @@ aside {
   width: $sidebar-width;
   position: fixed;
   height: 100%;
+  .light-nav ul li a {
+    color: $grey;
+    text-shadow: 1px 1px 3px $dark-grey;
+    &:hover {
+      color: $light-grey;
+    }
+  }
   ul {
     padding: 5rem 1rem;
     li {
-      // text-shadow: 2px 2px $dark-grey;
       padding: 10px;
       margin: 0;
       a {
-        color: $grey;
+        color: $medium-grey;
         &:hover {
           color: $black;
         }
@@ -112,9 +121,9 @@ aside {
 }
 
 main {
-  margin: auto;
+  // margin: auto;
   margin-left: $sidebar-width;
-  padding: 5rem 1rem;
+  padding: 5rem 2rem 5rem 0;
   width: auto;
   background-attachment: fixed;
   -webkit-background-clip: text;
@@ -124,7 +133,7 @@ main {
 }
 
 .home {
-  background: url(../images/digitalnomad.jpg) no-repeat center center fixed;
+  background: url(../images/digitalnomad2.jpg) no-repeat bottom center fixed;
   background-size: cover;
   position: fixed;
   left: 0;
@@ -133,11 +142,17 @@ main {
   height: 100%;
   overflow: auto;
   z-index: -1;
+  .content {
+    background: $orange;
+    color: $white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.home {
-  
-}
 
 .about {
 
