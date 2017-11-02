@@ -1,12 +1,35 @@
 import React from 'react'
+import Link from 'gatsby-link'
 
 const WorkModelPage = ({ data }) => (
   <div className="work">
     <div className="work-item">
       <h3>Modeling</h3>
-      <p>I first started modeling part-time in 2008. At first, the majority of my work was product modeling but I also moved on to runway shows, event promotions, tv appearances, and extra work in movies.</p>
+      {data.allMarkdownRemark.edges.map(post => (
+        <Link
+          key={post.node.id}
+          to={post.node.frontmatter.path} >
+          {post.node.frontmatter.title}
+        </Link >
+      ))}
     </div>
   </div>
 )
+
+export const pageQuery = graphql`
+  query ModelQuery {
+    allMarkdownRemark(limit: 10) {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`
 
 export default WorkModelPage

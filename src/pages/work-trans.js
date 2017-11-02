@@ -1,12 +1,35 @@
 import React from 'react'
+import Link from 'gatsby-link'
 
 const WorkTransPage = ({ data }) => (
   <div className="work">
     <div className="work-item">
-      <h3>Japanese and Korean Translation/Subtitling</h3>
-      <p>After studying abroad in Japan in 2004, I realized I had a passion for learning languages and went on to major in Japanese, live in Japan for 4 years, and then move to Korea for 6 years and learn Korean. During my time abroad, I had many opportunities to freelance translation, interpretation, and subtitling work. I also have experience in building multi-language websites as well.</p>
+      <h3>Translation/Subtitling</h3>
+      {data.allMarkdownRemark.edges.map(post => (
+        <Link
+          key={post.node.id}
+          to={post.node.frontmatter.path} >
+          {post.node.frontmatter.title}
+        </Link >
+      ))}
     </div>
   </div>
 )
+
+export const pageQuery = graphql`
+  query TransQuery {
+    allMarkdownRemark(limit: 10) {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`
 
 export default WorkTransPage
