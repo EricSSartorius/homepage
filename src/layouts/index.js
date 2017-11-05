@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import favicon from '../../favicon.ico'
-import Header from '../templates/header'
+import Header from '../components/header'
 import './index.scss'
 
 const Footer = () => (
@@ -30,9 +30,9 @@ const TemplateWrapper = ({ children }) => (
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     </Helmet>
     <Header />
-    <main>
-      {children()}
-    </main>
+      <main>
+        {children()}
+      </main>
     <Footer />
   </div>
 )

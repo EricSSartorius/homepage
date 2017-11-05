@@ -4,7 +4,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
   const projectTemplate = path.resolve('src/templates/project.js')
   return graphql(`{
-    allMarkdownRemark {
+    allMarkdownRemark(limit: 1000) {
       edges {
         node {
           html
@@ -12,17 +12,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           frontmatter {
             path
             title
-            thumbnail {
-              childImageSharp {
-                sizes(
-                  maxWidth: 850
-                  quality: 90
-                  traceSVG: { color: "#f3f3f3" }
-                ) {
-                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
-                }
-              }
-            }
           }
         }
       }

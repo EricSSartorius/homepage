@@ -12,30 +12,6 @@ $sidebar-width: 300px;
 $fadeText-distance: 0.2;
 $transition-time: 0.3s;
 
-@keyframes scrollDown {
-	from {
-    height: 0;
-		min-height: 0;
-		overflow: hidden;
-	}
-	to {
-    height: auto;
-    min-height: 30px;
-	}
-}
-
-@keyframes scrollUp {
-	from {
-    height: auto;
-    min-height: 30px;
-	}
-	to {
-    height: 0;
-  	min-height: 0;
-  	overflow: hidden;
-	}
-}
-
 @font-face {
   font-family: 'BigNoodleTitling Oblique';
   font-style: normal;
@@ -138,10 +114,10 @@ header {
       text-shadow: 2px 2px $dark-grey;
     }
     nav ul li a {
-      color: $grey;
+      color: $light-grey;
       text-shadow: 1px 1px 3px $dark-grey;
       &:hover {
-        color: $light-grey;
+        color: $white;
       }
     } 
   }
@@ -197,7 +173,7 @@ main {
     text-align: center;
   }
   .home {
-    background: url(../images/digitalnomad2.jpg) no-repeat bottom center fixed;
+    background: url(../images/digitalnomad3.jpg) no-repeat bottom center fixed;
     background-size: cover;
     position: fixed;
     left: 0;
@@ -366,79 +342,3 @@ footer {
     width: calc(100% / 3);
   }
 }
-
-
-
-
-/* Portfolio WIP */
-
-// .base {
-// 	display: grid;
-// 	grid-auto-rows: $row-size;
-// 	grid-column-gap: $gutter;
-// 	grid-row-gap: $gutter;
-// 	grid-template-columns: repeat($columns, 1fr);
-// 	max-width: $content-width;
-// 	width: 100%;
-// 	@include for-tablet-landscape-down() {
-// 		grid-auto-rows: calc( (#{$content-width} - #{$gutter} * (2 - 1)) / 2 );
-// 		grid-template-columns: repeat(2, 1fr);
-// 	}
-// 	@include for-phone-only() {
-// 		grid-auto-rows: calc( (#{$content-width} - #{$gutter} * (1 - 1)) / 1 );
-// 		grid-template-columns: repeat(1, 1fr);
-// 	}
-// }
-
-// .wrapper {
-// 	box-sizing: border-box;
-// 	position: relative;
-
-// 	&:before {
-// 		content: '';
-// 		display: block;
-// 		padding-top: 100%;
-// 	}
-// }
-
-// .content {
-// 	height: 100%;
-// 	left: 0;
-// 	position: absolute;
-// 	top: 0;
-// 	width: 100%;
-
-// 	a {
-// 		color: #fff;
-// 		height: 100%;
-// 		left: 0;
-// 		opacity: 0;
-// 		padding: 2rem;
-// 		position: absolute;
-// 		top: 0;
-// 		width: 100%;
-// 		z-index: 10;
-
-// 		&:hover {
-// 			color: #fff;
-// 			opacity: 1;
-// 			text-decoration: none;
-// 		}
-// 	}
-// }
-
-// .project-image {
-// 	> div {
-// 		height: 100%;
-// 		left: 0;
-// 		position: absolute !important;
-// 		top: 0;
-// 		width: 100%;
-
-// 		> div {
-// 			position: static !important;
-// 		}
-// 	}
-// }
-
-// 

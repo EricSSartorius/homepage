@@ -33,27 +33,8 @@ class Header extends React.Component {
               <Link to="/projects" activeClassName="active" >Projects</Link>
             </li>
             <li className="nav">
-              <a href="http://iamtheepic.com" target="_blank">Blog</a>
-            </li>
-            <li className="nav">
               <Link to="/contact/" activeClassName="active" >Contact</Link>
             </li>
-            {/* <li className="sub-nav">
-              <Link to="/work-dev" activeClassName="active" >
-                Web Dev/Design</Link>
-            </li>
-            <li className="sub-nav">
-              <Link to="/work-trans" activeClassName="active" >
-                Translation/Subtitling</Link>
-            </li>
-            <li className="sub-nav">
-              <Link to="/work-model" activeClassName="active" >
-                Modeling</Link>
-            </li>
-            <li className="sub-nav sub-nav-movement">
-              <Link to="/work-movement" activeClassName="active" >
-                Movement Coaching</Link>
-            </li> */}
           </ul>
         </nav>
       </header>

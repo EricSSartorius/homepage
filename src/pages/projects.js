@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 const ProjectsPage = ({ data }) => (
   console.log(data),
   <div className="projects">
-    <h1 className="title">Projects</h1>
+    <h1 className="title">Dev Projects</h1>
     <div className="project-grid">
       {data.allMarkdownRemark.edges.map(project => (
         <div key={project.node.frontmatter.path} className="project-single">
