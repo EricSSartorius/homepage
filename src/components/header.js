@@ -1,15 +1,18 @@
 import React from "react"
 import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
 
 class Header extends React.Component {
   constructor() {
     super()
-    this.state = { open: false }
+    this.state = { 
+      open: false
+    }
   }
 
   render() {
     return (
-      <header className={window.location.pathname === "/" ? "light-menu" : ""}>
+      <header className={this.props.pathname}>
         <div className="header">
           <div className="header-top">
             <h1>
@@ -40,6 +43,10 @@ class Header extends React.Component {
       </header>
     )
   }
+}
+
+Header.propTypes = {
+  pathname: PropTypes.string,
 }
 
 export default Header

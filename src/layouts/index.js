@@ -17,25 +17,38 @@ const Footer = () => (
   </footer>
 )
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Eric Sartorius"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    >  
-      <link rel="shortcut icon" type="image/png" href={favicon} />
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-    </Helmet>
-    <Header />
-      <main>
-        {children()}
-      </main>
-    <Footer />
-  </div>
-)
+class TemplateWrapper extends React.Component {
+  render() {
+      return (<div>
+        <Helmet
+          title="Eric Sartorius"
+          meta={[
+            { name: 'description', content: 'A homepage for Eric Sartorius.' },
+            { name: 'keywords', content: 'homepage, eric sartorius, freelancer, front-end developer' },
+            { property: 'twitter:card', content: 'summary'},
+            { property: 'twitter:site', content: '@the_epic_life' },
+            { property: 'twitter:title', content: 'Eric Sartorius' },
+            { property: 'twitter:description', content: 'A homepage for Eric Sartorius' },
+            { property: 'twitter:creator', content: 'Eric Sartorius' },
+            { property: 'twitter:image', content: '/images/digitalnobad3.jpg' },
+            { property: 'og:title', content: 'Eric Sartorius' },
+            { property: 'og:url', content: 'http://ericsartorius.com' },
+            { property: 'og:image', content: '/images/digitalnobad3.jpg' },
+            { property: 'og:description', content: 'A homepage for Eric Sartorius' },
+            { property: 'og:site_name', content: 'Eric Sartorius' },
+          ]}
+        >
+          <link rel="shortcut icon" type="image/png" href={favicon} />
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        </Helmet>
+        <Header pathname={this.props.location.pathname === "/" ? "light-menu" : ""} />
+        <main >
+          {this.props.children()}
+        </main>
+        <Footer />
+      </div>)
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
