@@ -6,56 +6,6 @@ import favicon from '../../favicon.ico'
 import Header from '../templates/header'
 import './index.scss'
 
-// const Header = () => (
-//   <header className={window.location.pathname === "/" ? "light-logo" : ""}>
-//     <h1>
-//       <Link to="/">
-//         Eric Sartorius
-//       </Link>
-//     </h1>
-//     <div class="wrapper-menu">
-//       <div class="line-menu half start"></div>
-//       <div class="line-menu"></div>
-//       <div class="line-menu half end"></div>
-//     </div>
-//   </header>
-// )
-
-// const Nav = () => (
-//   <nav className={window.location.pathname === "/" ? "light-nav" : ""}>
-//     <ul>
-//       <li className="nav">
-//         <Link to="/about/" activeClassName="active" >About</Link>
-//       </li>
-//       <li className="nav">
-//         <a href="http://iamtheepic.com" target="_blank">Blog</a>
-//       </li>
-//       <li className="nav">
-//         <Link to="/contact/" activeClassName="active" >Contact</Link>
-//       </li>
-//       <li className="nav nav-work">
-//         <Link to="/work" activeClassName="active" >Work</Link>
-//       </li>
-//       <li className="sub-nav">
-//         <Link to="/work-dev" activeClassName="active" >
-//         Web Dev/Design</Link>
-//       </li>
-//       <li className="sub-nav">
-//         <Link to="/work-trans" activeClassName="active" >
-//         Translation/Subtitling</Link>
-//       </li>
-//       <li className="sub-nav">
-//         <Link to="/work-model" activeClassName="active" >
-//         Modeling</Link>
-//       </li>
-//       <li className="sub-nav sub-nav-movement">
-//         <Link to="/work-movement" activeClassName="active" >
-//         Movement Coaching</Link>
-//       </li>
-//     </ul>
-//   </nav>
-// )
-
 const Footer = () => (
   <footer className="footer">
     <ul>
@@ -80,9 +30,6 @@ const TemplateWrapper = ({ children }) => (
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     </Helmet>
     <Header />
-    {/* <aside className="closed">
-      <Nav />
-    </aside> */}
     <main>
       {children()}
     </main>

@@ -2,7 +2,7 @@ const path = require('path')
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
-  const postTemplate = path.resolve('src/templates/post.js')
+  const projectTemplate = path.resolve('src/templates/project.js')
   return graphql(`{
     allMarkdownRemark {
       edges {
@@ -12,6 +12,17 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           frontmatter {
             path
             title
+            thumbnail {
+              childImageSharp {
+                sizes(
+                  maxWidth: 850
+                  quality: 90
+                  traceSVG: { color: "#f3f3f3" }
+                ) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                }
+              }
+            }
           }
         }
       }
@@ -25,7 +36,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       res.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.frontmatter.path,
-          component: postTemplate
+          component: projectTemplate
         })
       })
     })

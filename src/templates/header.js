@@ -10,22 +10,27 @@ class Header extends React.Component {
   render() {
     return (
       <header className={window.location.pathname === "/" ? "light-menu" : ""}>
-        <div className="header-top">
-          <h1>
-            <Link to="/">
-              Eric Sartorius
-            </Link>
-          </h1>
-          <div className={`wrapper-menu ${this.state.open ? "open" : ""}`} onClick={() => this.setState({ open: !this.state.open })}>
-            <div class="line-menu half start"></div>
-            <div class="line-menu"></div>
-            <div class="line-menu half end"></div>
+        <div className="header">
+          <div className="header-top">
+            <h1>
+              <Link to="/">
+                Eric Sartorius
+              </Link>
+            </h1>
+            <div className={`wrapper-menu ${this.state.open ? "open" : ""}`} onClick={() => this.setState({ open: !this.state.open })}>
+              <div className="line-menu half start"></div>
+              <div className="line-menu"></div>
+              <div className="line-menu half end"></div>
+            </div>
           </div>
         </div>
-        <nav className={`${this.state.open ? "" : "closed"}`}>
+        <nav onClick={() => this.setState({ open: false })} className={`${this.state.open ? "" : "closed"}`}>
           <ul>
             <li className="nav">
               <Link to="/about/" activeClassName="active" >About</Link>
+            </li>
+            <li className="nav">
+              <Link to="/projects" activeClassName="active" >Projects</Link>
             </li>
             <li className="nav">
               <a href="http://iamtheepic.com" target="_blank">Blog</a>
@@ -33,10 +38,7 @@ class Header extends React.Component {
             <li className="nav">
               <Link to="/contact/" activeClassName="active" >Contact</Link>
             </li>
-            <li className="nav nav-work">
-              <Link to="/work" activeClassName="active" >Work</Link>
-            </li>
-            <li className="sub-nav">
+            {/* <li className="sub-nav">
               <Link to="/work-dev" activeClassName="active" >
                 Web Dev/Design</Link>
             </li>
@@ -51,7 +53,7 @@ class Header extends React.Component {
             <li className="sub-nav sub-nav-movement">
               <Link to="/work-movement" activeClassName="active" >
                 Movement Coaching</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </header>
