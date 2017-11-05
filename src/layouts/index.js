@@ -39,7 +39,6 @@ class TemplateWrapper extends React.Component {
           ]}
         >
           <link rel="shortcut icon" type="image/png" href={favicon} />
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         </Helmet>
         <Header pathname={this.props.location.pathname === "/" ? "light-menu" : ""} />
         <main >
