@@ -39,6 +39,7 @@
     "prettier": "^1.7.4"
   },
   "contentSecurityPolicy": {
-  "font-src": "data:"
+    "default-src": "'none'",
+    "font-src": "'self' data: https://fonts.googleapis.com/"
   }
 }
