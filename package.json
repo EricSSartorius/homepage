@@ -37,9 +37,5 @@
   "devDependencies": {
     "gh-pages": "^1.0.0",
     "prettier": "^1.7.4"
-  },
-  "contentSecurityPolicy": {
-    "default-src": "'none'",
-    "font-src": "'self' data: https://fonts.googleapis.com/"
   }
 }
