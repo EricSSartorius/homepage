@@ -1,5 +1,5 @@
 ---
-path: '/projects/u-judge'
+path: '/u-judge'
 title: 'U-Judge'
 thumbnail: './thumb.jpg'
 ---

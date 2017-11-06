@@ -1,5 +1,5 @@
 ---
-path: '/projects/bloc-jams'
+path: '/bloc-jams'
 title: 'Bloc Jams'
 thumbnail: './thumb.jpg'
 ---

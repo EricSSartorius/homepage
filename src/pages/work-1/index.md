@@ -1,5 +1,5 @@
 ---
-path: '/projects/codepen'
+path: '/codepen'
 title: 'Codepen Art'
 thumbnail: './thumb.jpg'
 ---

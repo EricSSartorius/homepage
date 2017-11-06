@@ -1,5 +1,5 @@
 ---
-path: '/projects/rentr'
+path: '/rentr'
 title: 'Rentr'
 thumbnail: './thumb.jpg'
 ---

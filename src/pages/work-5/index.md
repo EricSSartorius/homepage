@@ -1,5 +1,5 @@
 ---
-path: '/projects/block-time'
+path: '/block-time'
 title: Bloc Time
 thumbnail: './thumb.jpg'
 ---
