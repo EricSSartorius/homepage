@@ -124,6 +124,7 @@ header {
   nav {
     position: fixed; 
     padding: 5rem 1.5rem;
+    z-index: 9;
     ul {
       li {
         padding: 10px 0;
