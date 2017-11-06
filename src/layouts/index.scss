@@ -12,12 +12,12 @@ $sidebar-width: 300px;
 $fadeText-distance: 0.2;
 $transition-time: 0.3s;
 
-// @font-face {
-//   font-family: 'BigNoodleTitling Oblique';
-//   font-style: normal;
-//   font-weight: normal;
-//   src: local('BigNoodleTitling Oblique'), url('../fonts/big_noodle_titling_oblique.woff') format('woff');
-// }
+@font-face {
+  font-family: 'BigNoodleTitling Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('BigNoodleTitling Oblique'), url('../fonts/big_noodle_titling_oblique.woff') format('woff');
+}
 
 *,
 *:before,
@@ -153,7 +153,7 @@ header {
             padding-bottom: 0;
           }
           a {
-            // font-family: 'BigNoodleTitling Oblique';
+            font-family: 'BigNoodleTitling Oblique';
             font-size: 48px;
             &:hover {
               font-size: 72px;
@@ -261,7 +261,7 @@ footer {
   bottom: 0;
   background: $black;
   ul {
-    // font-family: 'BigNoodleTitling Oblique';
+    font-family: 'BigNoodleTitling Oblique';
     display: flex;
     justify-content: center;
     li {

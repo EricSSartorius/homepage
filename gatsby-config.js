@@ -22,12 +22,12 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`Roboto`, `sans-serif`]
-    //   }
-    // },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Roboto`, `sans-serif`]
+      }
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
