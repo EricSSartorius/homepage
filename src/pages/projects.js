@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 
 const ProjectsPage = ({ data }) => (
-  console.log(data),
   <div className="projects">
     <h1 className="title">Dev Projects</h1>
     <div className="project-grid">
