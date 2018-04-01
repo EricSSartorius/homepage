@@ -1,6 +1,6 @@
 ---
-path: '/rachio
-title: Rachio
+path: '/rachio'
+title: 'Rachio'
 thumbnail: './thumb.jpg'
 ---
 

@@ -188,11 +188,11 @@ main {
     margin: auto;
     max-width: 1200px;
     .project-single {
-      padding: 5px;
+      margin: 1rem;
       position: relative;
       .project-image {
         display: block;
-        widows: 100%;
+        width: 100%;
         max-width: 100%;
         height: auto;
       }
@@ -327,19 +327,16 @@ footer {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  .project-single {
-    width: 50%;
-  }
+.project-grid {
+  display:grid;
+  grid-template-columns: 50% 1fr;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 768px) {
+  .project-grid {
+    display: block;
+  }
   .project-single {
-    width: calc(100% / 3);
+    margin: 1rem 0;
   }
 }
